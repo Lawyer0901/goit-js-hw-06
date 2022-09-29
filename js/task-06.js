@@ -6,13 +6,16 @@
 const inputName = document.querySelector("#validation-input");
 
 inputName.addEventListener("blur", outOfFocusInputName);
-console.dir(inputName);
+// console.dir(inputName);
 function outOfFocusInputName(event) {
+  inputName.classList.remove("valid");
+  inputName.classList.remove("invalid");
+
   console.log(event.currentTarget.value);
-  if (inputName.textContent === inputName.value) {
-    inputName.classList.add("valid");
-  } else {
-    inputName.classList.add("invalid");
+  if (event.currentTarget.value.length == inputName.dataset.length) {
+    return inputName.classList.add("valid");
   }
-  return inputName;
+
+  return inputName.classList.add("invalid");
 }
+// console.log(inputName.dataset.length);
