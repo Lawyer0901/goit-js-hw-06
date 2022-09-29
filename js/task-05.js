@@ -10,8 +10,7 @@ inputName.addEventListener("input", onInputName);
 function onInputName(event) {
   console.log(event.currentTarget.value);
   if (event.currentTarget.value === null) {
-    outputName.textContent = "Anonymous";
-  } else {
-    outputName.textContent = event.currentTarget.value;
+    return outputName.textContent;
   }
+  return (outputName.textContent = event.currentTarget.value);
 }
