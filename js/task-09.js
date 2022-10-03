@@ -10,7 +10,7 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-function changeRandomColor(event) {
+function changeRandomColor() {
   const rndCol = getRandomHexColor();
   body.style.backgroundColor = rndCol;
   nameOfColor.textContent = rndCol;

@@ -8,9 +8,10 @@ console.log(outputName.textContent);
 inputName.addEventListener("input", onInputName);
 
 function onInputName(event) {
+  const emptyString = "";
   console.log(event.currentTarget.value);
-  if (event.currentTarget.value === null) {
-    return outputName.textContent;
+  if (event.currentTarget.value === emptyString) {
+    return (outputName.textContent = "Anonymous");
   }
   return (outputName.textContent = event.currentTarget.value);
 }
